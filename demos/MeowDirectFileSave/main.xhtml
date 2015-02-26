@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US-x-Hixie">
+<head>
+    <meta charset="utf-8"/>
+    <title>Easy Editor and Downloader</title>
+    <link rel="stylesheet" type="text/css" href="http://windowsgeekpro.in/MeowDirectFileSave/meow.css"/>
+</head>
+<body>
+    <section id="image-fun">
+        <h2>Easy Image Editor and Direct File Saving</h2>
+        <canvas class="input" id="canvas" width="500" height="300"/>
+        <form id="canvas-options">
+            <label>Filename: <input type="text" class="filename" id="canvas-filename" placeholder="doodle"/>.png</label>
+            <input type="submit" value="Save"/>
+            <input type="button" id="canvas-clear" value="Clear"/>
+        </form>
+    </section>
+    <section id="text-fun">
+        <h2>Easy Text Editor and Direct File Saving</h2>
+        <textarea class="input" id="text" placeholder="Once upon a time..."/>
+        <form id="text-options">
+            <label>Filename: <input type="text" class="filename" id="text-filename" placeholder="a plain document"/>.txt</label>
+            <input type="submit" value="Save"/>
+        </form>
+    </section>
+    <section id="html-fun">
+        <h2>Easy HTML Editor</h2>
+        <div class="input" id="html" contenteditable="">
+            <h3>Some example rich text</h3>
+            <ul>
+                <li><del>Plain</del> <ins>Boring</ins> text.</li>
+                <li><em>Emphasized text!</em></li>
+                <li><strong>Strong text!</strong></li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="70" height="70">
+                        <circle cx="35" cy="35" r="35" fill="red"/>
+                        <text x="10" y="40">image</text>
+                    </svg>
+                </li>
+                <li><a href="">A link.</a></li>
+            </ul>
+        </div>
+        <form id="html-options">
+            <label>Filename: <input type="text" class="filename" id="html-filename" placeholder="a rich document"/>.xhtml</label>
+            <input type="submit" value="Save"/>
+        </form>
+    </section>
+    <script async="" src="http://windowsgeekpro.in/MeowDirectFileSave/main.js"/>
+    <script async="" src="http://windowsgeekpro.in/MeowDirectFileSave/filesave.js"/>
+    <script async="" src="http://windowsgeekpro.in/MeowDirectFileSave/blob.js"/>
+    <script async="" src="http://windowsgeekpro.in/MeowDirectFileSave/canvas-to-blob.js"/>
+</body>
+</html>
