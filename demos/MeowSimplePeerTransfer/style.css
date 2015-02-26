@@ -1,0 +1,91 @@
+* {
+  font-weight: lighter; }
+
+body {
+  color: #e5e5e5;
+  background: #28292f; }
+  body #container-div {
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 50px; }
+  body #login-btn {
+    background: #fff;
+    color: #3e87d1;
+    padding: 10px 15px; 
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background 0.2s; }
+    body #login-btn:hover {
+      background: #3063af; }
+  body #login-div {
+    text-align: center; }
+  body input[type=text] {
+    color: #3e87d1;
+    background: #b7b7b7;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #e5e5e5;
+    width: 200px; }
+    body input[type=text]:focus {
+      box-shadow: none;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #28292f; }
+  body [ch-scope=peerScope] {
+    text-align: center; }
+    body [ch-scope=peerScope] .panel {
+      line-height: 30px; }
+    body [ch-scope=peerScope] .area {
+      text-align: left;
+      border-radius: 6px;
+      border: 1px solid #b7b7b7;
+      margin: 10px;
+      padding: 10px;
+      background: #e5e5e5;
+      color: #28292f;
+      height: 300px;
+      text-shadow: 0px 0px 3px #fff;
+      overflow: auto; }
+    body [ch-scope=peerScope] .drop {
+      border: 2px solid #3e87d1; }
+    body [ch-scope=peerScope] .center {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column; }
+    body [ch-scope=peerScope] #received-p {
+      margin-top: 0px;
+      margin-bottom: 10px; }
+    body [ch-scope=peerScope] a {
+      color: #3063af; }
+      body [ch-scope=peerScope] a:hover {
+        text-decoration: none; }
+    body [ch-scope=peerScope] #files-div {
+      padding: 0px; }
+    body [ch-scope=peerScope] #files-div li {
+      list-style: none;
+      padding-left: 10px;
+      border-bottom: 1px solid #62f34b; } 
+    body [ch-scope=peerScope] #notification-div {
+      font-size: 12px;
+      color: red;
+      line-height: 20px; }
+    body [ch-scope=peerScope] .notify {
+      font-size: 12px;
+      color: #b7b7b7;
+      line-height: 20px; }
+    body [ch-scope=peerScope] #indicator {
+      cursor: pointer; }
+    body [ch-scope=peerScope] .disconnected {
+      color: red;
+      font-size: 15px; }
+    body [ch-scope=peerScope] .connected {
+      color: #62f34b;
+      font-size: 15px; }
+    body [ch-scope=peerScope] .li-item {
+      transition: all 0.2s ease-in-out; }
+      body [ch-scope=peerScope] .li-item:hover {
+        background: #3063af;
+        color: #b7b7b7;
+        text-shadow: none; }
