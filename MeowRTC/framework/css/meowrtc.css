@@ -31,11 +31,11 @@ body {
       border: none;
       outline: none;
       border-bottom: 2px solid #28292f; }
-  body [meow-scope=peerScope] {
+  body [ch-scope=peerScope] {
     text-align: center; }
-    body [meow-scope=peerScope] .panel {
+    body [ch-scope=peerScope] .panel {
       line-height: 30px; }
-    body [meow-scope=peerScope] .area {
+    body [ch-scope=peerScope] .area {
       text-align: left;
       border-radius: 6px;
       border: 1px solid #b7b7b7;
@@ -46,46 +46,46 @@ body {
       height: 300px;
       text-shadow: 0px 0px 3px #fff;
       overflow: auto; }
-    body [meow-scope=peerScope] .drop {
+    body [ch-scope=peerScope] .drop {
       border: 2px solid #3e87d1; }
-    body [meow-scope=peerScope] .center {
+    body [ch-scope=peerScope] .center {
       display: flex;
       text-align: center;
       justify-content: center;
       align-content: center;
       flex-direction: column; }
-    body [meow-scope=peerScope] #received-p {
+    body [ch-scope=peerScope] #received-p {
       margin-top: 0px;
       margin-bottom: 10px; }
-    body [meow-scope=peerScope] a {
+    body [ch-scope=peerScope] a {
       color: #3063af; }
-      body [meow-scope=peerScope] a:hover {
+      body [ch-scope=peerScope] a:hover {
         text-decoration: none; }
-    body [meow-scope=peerScope] #files-div {
+    body [ch-scope=peerScope] #files-div {
       padding: 0px; }
-    body [meow-scope=peerScope] #files-div li {
+    body [ch-scope=peerScope] #files-div li {
       list-style: none;
       padding-left: 10px;
       border-bottom: 1px solid #62f34b; } 
-    body [meow-scope=peerScope] #notification-div {
+    body [ch-scope=peerScope] #notification-div {
       font-size: 12px;
       color: red;
       line-height: 20px; }
-    body [meow-scope=peerScope] .notify {
+    body [ch-scope=peerScope] .notify {
       font-size: 12px;
       color: #b7b7b7;
       line-height: 20px; }
-    body [meow-scope=peerScope] #indicator {
+    body [ch-scope=peerScope] #indicator {
       cursor: pointer; }
-    body [meow-scope=peerScope] .disconnected {
+    body [ch-scope=peerScope] .disconnected {
       color: red;
       font-size: 15px; }
-    body [meow-scope=peerScope] .connected {
+    body [ch-scope=peerScope] .connected {
       color: #62f34b;
       font-size: 15px; }
-    body [meow-scope=peerScope] .li-item {
+    body [ch-scope=peerScope] .li-item {
       transition: all 0.2s ease-in-out; }
-      body [meow-scope=peerScope] .li-item:hover {
+      body [ch-scope=peerScope] .li-item:hover {
         background: #3063af;
         color: #b7b7b7;
         text-shadow: none; }
