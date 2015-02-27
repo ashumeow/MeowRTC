@@ -1,4 +1,4 @@
-/* global $meow, Peer, FileReaderJS, saveAs */
+/* global $ch, Peer, FileReaderJS, saveAs */
 
 // The API key for Peer.JS WebRTC library.
 var PEER_KEY = 'm2ir2tnmldqjjor';
@@ -12,39 +12,39 @@ var EVENT = {
 var DISCONNECT_WARNING = 'disconnected with peer.';
 
 // Peer template filename.
-var PEER_TEMPLATE = 'peer-template.html';
+var PEER_TEMPLATE = 'meowrtc-template.html';
 
-// Global MeowRTCJS source for keeping all received files' meta data.
-$meow.source('files', []);
+// Global ChopJS source for keeping all received files' meta data.
+$ch.source('files', []);
 
 // Global notification source.
-$meow.source('notify', []);
+$ch.source('notify', []);
 
-$meow.use('./meowrtc-junkie', function () {
+$ch.use('./meowrtc-junkie', function () {
   'use strict';
 
   // Generate a random ID postfix to ensure there would not be (ideally)
   // any users using same ID.
-  var postfix = $meow.utils.random(10, 90) + '' + $meow.utils.random(10, 90);
+  var postfix = $ch.utils.random(10, 90) + '' + $ch.utils.random(10, 90);
 
-  // Global MeowRTCJS event: `ready peer`.
+  // Global ChopJS event: `ready peer`.
   //
   //      data = {
   //        container: peerScope_container,
   //        username: username
   //      }
   //
-  $meow.event.listen(EVENT.READY_PEER, function (data) {
+  $ch.event.listen(EVENT.READY_PEER, function (data) {
     var container = data.container;
     var username = data.username;
 
-    var template = $meow.readFile(PEER_TEMPLATE);
+    var template = $ch.readFile(PEER_TEMPLATE);
     container.html(template);
     // Register `peerScope`.
     readyPeerScope(username);
   });
 
-  $meow.scope('appScope', function ($scope, $event) {
+  $ch.scope('appScope', function ($scope, $event) {
     // Initialize `username` to an empty string.
     $scope.username.set('');
 
@@ -61,7 +61,7 @@ $meow.use('./meowrtc-junkie', function () {
 
       // Otherwise, fire global `ready peer` event
       // and pass `peerContainer` and `username`.
-      $meow.event.emit(EVENT.READY_PEER, {
+      $ch.event.emit(EVENT.READY_PEER, {
         container: $scope.peerContainer,
         username: username
       });
@@ -79,7 +79,7 @@ $meow.use('./meowrtc-junkie', function () {
   //
   // + `username`: username.
   function readyPeerScope(username) {
-    $meow.scope('peerScope', function ($scope, $event) {
+    $ch.scope('peerScope', function ($scope, $event) {
       // Show user ID.
       var id = username + postfix;
       $scope.idDiv.content(id);
@@ -122,11 +122,11 @@ $meow.use('./meowrtc-junkie', function () {
       peer.on('connection', function (con) {
         con.on('data', function (data) {
           // Push file `data` to global files source.
-          var files = $meow.source('files');
+          var files = $ch.source('files');
           data.id = files.length;
           data.blob = new Blob([data.blob], {type: data.type});
           files.push(data);
-          $meow.source('files', files);
+          $ch.source('files', files);
 
           // Now, render inline template against global `files`.
           $scope.filesDiv.inline(files);
@@ -179,17 +179,17 @@ $meow.use('./meowrtc-junkie', function () {
   }
 
   // Now, register router.
-  $meow.router.add({
+  $ch.router.add({
     'download/:id': function (q) {
       // Get file number ID from global `files` source.
-      var file = $meow.source('files')[q.id];
+      var file = $ch.source('files')[q.id];
       var filename = file.filename;
       var blob = file.blob;
       // Now, download file.
       saveAs(blob, filename);
 
       // Finally, navigate to `/`.
-      $meow.router.navigate('/');
+      $ch.router.navigate('/');
     }
   });
 });
