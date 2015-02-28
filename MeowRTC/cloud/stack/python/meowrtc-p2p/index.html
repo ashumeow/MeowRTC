@@ -1,0 +1,320 @@
+<html>
+  <head>
+    <title>MeowRTC Peer-to-Peer Sample </title>
+
+    <style>
+      textarea{resize:none}
+    </style>
+
+  </head>
+  
+  <body>
+    <script type="text/javascript" src="/_ah/channel/jsapi"></script>
+
+    <script type="text/javascript">
+      var channelToken = "{{ token }}";
+      var user = "{{ user }}";
+      var connected = false
+      var localStream = null;
+      var peerConnection = null;
+      var peer = null;
+      var iceCandidates = [];
+      var canSendIceCandidate = false; 
+      var statisticsInterval = null;
+      var video = typeof document !== 'undefined' && document.createElement("video");
+      video.autoplay = "autoplay";
+      
+      function clearStatus() {
+        textarea = document.getElementById("statusArea");
+        textarea.innerHTML = "";
+      }
+
+      function status(msg) {
+         textarea = document.getElementById("statusArea");
+         textarea.innerHTML += msg;
+         console.log(msg);
+      }
+
+      function getMedia(successCallback) {
+        if (localStream) {
+          successCallback(localStream);
+        } else {
+          var constraints = { audio:true }
+          navigator.webkitGetUserMedia(constraints, successCallback, function(error) {
+            status("Error while accessing microphone: " + error.name + "\n");
+          });
+        }
+      }
+
+      function connect() {
+        var channel = new goog.appengine.Channel('{{ token }}');
+        var socket = channel.open();
+        socket.onopen = function() {
+          status("Channel connected\n");
+          connected = true;
+        }
+        socket.onerror = function() {
+          status("Channel error\n");
+          connected = false;
+        }
+        socket.onclose = function() {
+          status("Channel closed\n");
+          connected = false;
+        }
+        socket.onmessage = function(message) {
+          status("Channel message: " + message.data + "\n");
+        }
+        socket.onmessage = function(message) {
+          var message = JSON.parse(message.data);
+          if (message.INVITE) {
+            peer = message.INVITE.from;
+            callerSend = message.INVITE.callerSend;
+            canSendIceCandidate = true;
+            status("Received call from: " + peer + ", send audio: " + !callerSend + "\n");
+            getMedia(function(stream) {
+              localStream = stream;
+              answerCall(!callerSend, message.INVITE.sdp);
+            });
+          } else if (message.INVITE_RESPONSE) {
+            status("Call accepted\n")
+            // send queued ice candidates
+            canSendIceCandidate = true;
+            for (i = 0; i < iceCandidates.length; i++) {
+              sendIceCandidate(iceCandidates[i]);
+            }
+            peerConnection.setRemoteDescription(new RTCSessionDescription({sdp: message.INVITE_RESPONSE.sdp, type:"answer"}), function() {}, function(error) {
+             status("Failed to set remote description\n");
+          });
+          } else if (message.ICE) {
+            status("Received ICE candidate: " + message.ICE.candidate + "\n");
+            if (peerConnection) {
+              peerConnection.addIceCandidate(new RTCIceCandidate({sdpMLineIndex: message.ICE.sdpMLineIndex, candidate: message.ICE.candidate}));
+            } else {
+              status("Cannot set remote ICE candidate\n");
+            }
+          } else if (message.HANGUP) {
+            status("Received HANGUP\n");
+            doHangup();
+          } else if (message.ERROR) {
+            status("Received ERROR: " + message.ERROR + "\n");
+            doHangup()
+          }
+        }
+      }
+
+      function sendMessage(message) {
+        var path = "/message";
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', path, true);
+        xhr.send(message);
+      }
+
+      function createPeerConnection(sender, receiver) {
+        peerConnection = new webkitRTCPeerConnection({ iceServers: [] });
+        if (sender) {
+          peerConnection.addStream(localStream);
+        }
+        if (receiver) {
+          peerConnection.onaddstream = function(event) {
+            status("Attaching remote stream\n");
+            if (typeof video.srcObject !== 'undefined') {
+              video.srcObject = event.stream;
+            } else if (typeof video.mozSrcObject !== 'undefined') {
+              video.mozSrcObject = event.stream;
+            } else if (typeof video.src !== 'undefined') {
+              video.src = URL.createObjectURL(event.stream);
+            } else {
+              status("Error attaching stream\n");
+            }
+          }
+        }
+        peerConnection.onicecandidate = function (candidate) {
+          if (candidate.candidate) {
+            if (canSendIceCandidate) {
+              sendIceCandidate(candidate);
+            } else {
+              iceCandidates[iceCandidates.length] = candidate;
+            }
+          }
+        }
+        peerConnection.oniceconnectionstatechange = function() {
+          if (peerConnection) {
+            status("ICE state: " + peerConnection.iceConnectionState + "\n");
+          }
+        }
+
+        statisticsInterval = setInterval(getStatistics, 1000);
+      }
+
+     function getStatistics() {
+        if (peerConnection) {
+          peerConnection.getStats(processStatistics, function(error) {
+            status("Statistcs error\n");
+          });
+       }
+     }
+
+     function processStatistics(statistics) {
+       var statisticsArea = document.getElementById("statisticsArea");
+       var result = "Sender statistics:\n";
+       for (var i = 0; i < statistics.result().length; i++) {
+         var res = statistics.result()[i];
+         if (res.type == "ssrc") {
+           for (var j = 0; j < res.names().length; j++) {
+             var item = res.names()[j];
+             if (item == "audioInputLevel"
+               || item == "packetsSent"
+               || item == "bytesSent") {
+               result += item + ": " + res.stat(item) + "\n";
+               statisticsArea.innerHTML = result;
+             }
+           }
+         }
+       }
+     }
+
+     function clearStatistics() {
+       var statisticsArea = document.getElementById("statisticsArea");
+       stataticsArea = "Sender statistics:\naudioInputLevel: 0\npacketsSent: 0\nbytesSent: 0";
+     }
+
+     function sendIceCandidate(candidate) {
+       var message = '{"ICE":{ "to":"' + peer + '", "from":"' + user + '", "sdpMid":"' + candidate.candidate.sdpMid + '", "sdpMLineIndex":' + candidate.candidate.sdpMLineIndex + ', "candidate":"' + candidate.candidate.candidate + '"}}';
+       sendMessage(message);
+      }
+
+      function call() {
+        if (!connected) {
+          status("Please connect\n")
+          return;
+        }
+        peer = document.getElementById("peerName").value
+        if (!peer.length) {
+          status("Please specify peer name\n");
+          return;
+        }
+
+        status("Making call\n");
+
+        getMedia(call2);
+      }
+
+      function call2(stream) {
+        var audioTracks = stream.getAudioTracks();
+        if (audioTracks.length > 0) {
+          status('Using Audio device: ' + audioTracks[0].label + "\n");
+        }
+
+        clearStatistics();
+
+        localStream = stream;
+
+        var callerSend = document.getElementById("callerSend").checked;
+
+        createPeerConnection(true, !callerSend);
+
+        var constraints =  { 'mandatory': { 'OfferToReceiveAudio': true, 'OfferToReceiveVideo': false } };
+        peerConnection.createOffer(function(desc) {
+           peerConnection.setLocalDescription(new RTCSessionDescription(desc), sendInvite, function(error) {
+          status("Failed to set local description\n");
+        })
+        }, function (err) {
+          status("Failed to create offer\n");
+        }, constraints);
+      }
+
+      function answerCall(sendMedia, sdp) {
+
+        clearStatistics();
+
+        createPeerConnection(sendMedia, true);
+
+        var constraints =  { 'mandatory': { 'OfferToReceiveAudio': true, 'OfferToReceiveVideo': false } };
+        peerConnection.setRemoteDescription(new RTCSessionDescription({ sdp: sdp, type: "offer"}), function() {
+          peerConnection.createAnswer(function(desc) {
+          peerConnection.setLocalDescription(new RTCSessionDescription(desc), sendInviteResponse, function(error) {
+          status("Failed to set local description\n");
+        });
+        }, function (error) {
+          status("Failed to create answer\n");
+        }, constraints);
+        }, function(error) {
+          status("Failed to set remote description\n");
+        });
+      }
+
+      function sendInvite() {
+        var callerSend = document.getElementById("callerSend").checked;
+        var message = '{"INVITE":{ "to":"' + peer + '", "from":"' + user + '", "callerSend":' + callerSend + ', "sdp":' + JSON.stringify(peerConnection.localDescription.sdp) + '}}';
+        sendMessage(message);
+      }
+
+      function sendInviteResponse() {
+        var message = '{"INVITE_RESPONSE":{ "to":"' + peer + '", "from":"' + user + '", "sdp":' + JSON.stringify(peerConnection.localDescription.sdp) + '}}';
+        sendMessage(message);
+      }
+
+      function hangup() {
+        if (peerConnection) {
+          status("Hanging up\n");
+          var message =  '{"HANGUP":{ "to":"' + peer + '", "from":"' + user + '"}}';
+          sendMessage(message);
+
+          doHangup();
+        } else {
+          status("Not in a call\n");
+        }
+      }
+
+      doHangup = function() {
+
+        clearInterval(statisticsInterval);
+
+        if (peerConnection) {
+          peerConnection.close();
+          peerConnection = null;
+        }
+
+        var reuseMedia = document.getElementById("reuseMedia").checked;
+        if (localStream && !reuseMedia) {
+          localStream.stop();
+          localStream = null;
+        }
+
+        peer = null;
+        canSendIceCandidate = false;
+        iceCandidates = [];
+      }
+
+    </script>
+  
+    <h1>Twilio WebRTC Peer-to-Peer Sample</h1>
+
+    <table>
+      <tr>
+        <td width="412">
+          <label>User: {{ user }}</label>
+          <button onclick="connect()">Connect</button>
+
+          <p>
+            <input type=checkbox id="reuseMedia"/>Reuse local audio stream</br>
+            <input type=checkbox id="callerSend"/>Only caller sends audio</br>
+          </p>
+
+          <p> 
+            <label>Peer:</label>
+            <input type="text" id="peerName"/>
+            <button onclick="call()">Call</button>
+            <button onclick="hangup()">Hangup</button> 
+          </p>
+        </td>
+        <td>
+          <textarea rows="8" cols="40" id="statisticsArea" readonly></textarea>
+        </td>
+      </tr> 
+    </table>
+
+    <p><button onclick="clearStatus()">Clear</button></p>
+    <p><textarea rows="30" cols="100" id="statusArea" readonly></textarea></p>
+  </body>
+</html>
