@@ -9,11 +9,12 @@
   </head>
   <body>
     <div class="container">
-      <audio id="local_audio" autoplay="true" controls></audio>
+      <audio controls id="local_audio" autoplay="true">
+      <source src="The_Wanted-Drunk_On_Love.mp3" type="audio/mpeg">
+      </audio>
     </div>
     <script type="application/dart" src="meowrtc_audio.dart"></script>
     <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
     <script src="packages/browser/dart.js"></script>
-
   </body>
 </html>
