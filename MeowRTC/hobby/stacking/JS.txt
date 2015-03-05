@@ -1,0 +1,167 @@
+Top Javascript Frameworks:-
+(1) Sproutcore --- http://sproutcore.com/
+(2) Backbone.js --- http://backbonejs.org/
+(3) SpineJS --- http://spinejs.com/
+(4) AngularJS --- https://angularjs.org/
+(5) AgilityJS --- http://agilityjs.com/
+(6) CanJS --- http://canjs.com/
+(7) SammyJS --- http://sammyjs.org/
+(8) SnackJS --- http://snackjs.com/
+(9) EmberJS --- http://emberjs.com/
+(10) Stapes.js --- http://hay.github.io/stapes/
+(11) Mochikit --- http://mochi.github.io/mochikit/
+(12) ExtJS --- http://www.sencha.com/products/extjs
+(13) Qunit.js --- http://qunitjs.com/
+(14) Cappuccino --- http://www.cappuccino-project.org/
+(15) CoreMVC --- https://github.com/bennadel/CorMVC
+(16) Asana Luna --- http://asana.com/luna/
+(17) JavascriptMVC --- http://javascriptmvc.com/
+(18) FeatherJS --- http://feathersjs.com/
+(19) Soma.js --- http://somajs.github.io/somajs/#/1
+(20) KnockoutJS --- http://knockoutjs.com/
+Other Javascript Frameworks:-
+(1) MeowJS (experimental) --- https://github.com/geek-Research-Lab/meowJS
+(2) ChopJS  --- https://github.com/hufyhang/chop
+
+
+40 standalone Javascript Libraries:-
+
+(1) Forms
+(a) wForms --- http://www.formassembly.com/wForms/
+(b) Validanguage --- http://www.drlongghost.com/validanguage.php
+(c) LiveValidation --- http://www.livevalidation.com/
+(d) yav --- http://yav.sourceforge.net/en/index.html
+(e) qForms --- http://www.pengoworks.com/index.cfm?action=get:qforms
+(f) formreform --- http://code.google.com/p/formreform/
+
+(2) Animations
+(a) $fx() --- http://fx.inetcat.com/
+(b) JSTweener --- http://coderepos.org/share/wiki/JSTweener
+(c) Facebook Animation --- http://developers.facebook.com/animation/
+(d) FX --- http://ryanmorr.com/archives/fx-lightweight-and-standalone
+
+(3) Visualization and Image Effects
+(a) JS charts --- http://www.jscharts.com/
+(b) Canvas 3D JS Library (C3DL) --- http://www.c3dl.org/
+(c) Processing.js --- http://ejohn.org/blog/processingjs/
+(d) Raphael --- http://raphaeljs.com/
+(e) ImageFX --- http://www.nihilogic.dk/labs/imagefx/
+(f) Pixastic --- http://www.pixastic.com/
+(g) Reflection.js --- http://cow.neondragon.net/stuff/reflection/
+
+(4) Database
+(a) Taffy DB --- http://taffydb.com/
+(b) ActiveRecord.js --- http://www.activerecordjs.org/
+
+(5) String and Math Functions
+(a) Date.js --- http://www.datejs.com/
+(b) Sylvester --- http://sylvester.jcoglan.com/
+(c) Pretty Date --- http://ejohn.org/projects/javascript-pretty-date/
+(d) XRegExp --- http://stevenlevithan.com/regex/xregexp/
+(e) JS URL Library --- http://www.fliquidstudios.com/projects/javascript-url-library/
+
+(6) Fonts
+(a) typeface.js --- http://typeface.neocracy.org/
+(b) Cufon --- http://cufon.shoqolate.com/generate/
+
+(7) Debugging and Logging
+(a) Blackbird --- http://www.gscottolson.com/blackbirdjs/
+(b) NitobiBug --- http://www.nitobibug.com/
+(c) Firebug Lite --- http://getfirebug.com/lite.html
+
+(8) Others
+(a) SWFObject --- http://code.google.com/p/swfobject/
+(b) sorttable --- http://www.kryogenix.org/code/browser/sorttable/
+(c) dragtable --- http://www.danvk.org/wp/dragtable/
+(d) DD_roundies --- http://dillerdesign.com/experiment/DD_roundies/
+(e) DD_belatedPNG --- http://www.dillerdesign.com/experiment/DD_belatedPNG/
+(f) Custom JS Dialog Boxes --- http://www.scriptiny.com/2008/04/custom-javascript-dialog-boxes/
+(g) GameJS --- http://www.tommysmind.com/gamejs/
+(h) Shortcuts.js --- http://www.openjs.com/scripts/events/keyboard_shortcuts/
+(i) Mapstraction --- http://mapstraction.com/
+(j) Amberjack --- http://amberjack.org/
+(k) JSLoad --- http://jsload.net/
+
+
+Javascript libraries are based upon:-
+
+DOM
+(a) Dojo Toolkit
+(b) jQuery
+(c) Midori
+(d) MooTools
+(e) Prototype JS Framework
+(f) YUI Library
+
+GUI-related (widget-type)
+(a) Angular UI
+(b) DHTMLX
+(c) Dojo Widgets
+(d) Ext JS
+(e) jQuery UI
+(f) OpenUI5
+(g) Qooxdoo
+(h) Polymer Paper Elements
+(i) SmartClient
+(j) Kendo UI
+(k) Webix
+(l) WinJS
+(m) jQWidgets
+
+Graphics (canvas/SVG types)
+(a) D3.js
+(b) JS InfoVis Toolkit
+(c) Kinect.js
+(d) Processing.js
+(e) Raphael
+(f) SWFObject
+(g) Three.js
+(h) CreateJS
+
+WebApp (MVC, MVVM)
+(a) AngularJS
+(b) Backbone.js
+(c) Cappuccino
+(d) Chaplin.js
+(e) Echo
+(f) Ember.js
+(g) Enyo
+(h) Google Web Toolkit
+(i) JS MVC
+(j) KnockoutJS
+(k) MarionetteJS
+(l) MooTools
+(m) Prototype JS Framework
+(n) Rialto Toolkit
+(o) Sproutcore
+(p) Wakanda Framework
+(q) ExtJS
+
+Pure Javascript/Ajax
+(a) Google Closure Library
+(b) Joose
+(c) jsPHP
+(d) Microsoft's Ajax Library
+(e) MochiKit
+(f) PDF.js
+(g) Rico
+(h) Socket.io
+(i) Spry Framework
+(j) Underscore.js
+
+Template types
+(a) Cascade Framework
+(b) Handlebars
+(c) jQuery Mobile
+(d) Mustache
+(e) Twitter Bootstrap
+(f) ZURB Foundation
+
+Unit Testing
+(a) Jasmine
+(b) Unit.js
+(c) QUnit
+(d) Mocha
+
+Others
+(a) Modernizr
