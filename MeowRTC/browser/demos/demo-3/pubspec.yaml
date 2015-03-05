@@ -1,0 +1,4 @@
+name: meowrtc_video
+description: A WebRTC video application
+dependencies:
+  browser: any
