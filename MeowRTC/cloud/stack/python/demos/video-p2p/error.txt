@@ -1,0 +1,29 @@
+C:\Program Files\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\demos\python>dev_appserver.py video-p2p
+INFO     2015-03-07 15:00:47,426 devappserver2.py:726] Skipping SDK update check.
+WARNING  2015-03-07 15:00:50,500 simple_search_stub.py:1126] Could not read search indexes from c:\users\dell\appdata\lo
+cal\temp\appengine.video-p2p\search_indexes
+INFO     2015-03-07 15:00:50,517 api_server.py:172] Starting API server at: http://localhost:61658
+INFO     2015-03-07 15:00:50,532 dispatcher.py:186] Starting module "default" running at: http://localhost:8080
+INFO     2015-03-07 15:00:50,539 admin_server.py:118] Starting admin server at: http://localhost:61660
+ERROR    2015-03-07 09:31:42,924 wsgi.py:263]
+Traceback (most recent call last):
+  File "C:\Program Files\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\runtime\wsgi.py",
+line 240, in Handle
+    handler = _config_handle.add_wsgi_middleware(self._LoadHandler())
+  File "C:\Program Files\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\runtime\wsgi.py",
+line 302, in _LoadHandler
+    raise err
+ImportError: <module 'video-p2p' from 'C:\Program Files\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\demo
+s\python\video-p2p\video-p2p.pyc'> has no attribute app
+INFO     2015-03-07 15:01:42,953 module.py:737] default: "GET / HTTP/1.1" 500 -
+ERROR    2015-03-07 09:31:43,039 wsgi.py:263]
+Traceback (most recent call last):
+  File "C:\Program Files\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\runtime\wsgi.py",
+line 240, in Handle
+    handler = _config_handle.add_wsgi_middleware(self._LoadHandler())
+  File "C:\Program Files\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\runtime\wsgi.py",
+line 302, in _LoadHandler
+    raise err
+ImportError: <module 'video-p2p' from 'C:\Program Files\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\demo
+s\python\video-p2p\video-p2p.pyc'> has no attribute app
+INFO     2015-03-07 15:01:43,061 module.py:737] default: "GET /favicon.ico HTTP/1.1" 500 -
