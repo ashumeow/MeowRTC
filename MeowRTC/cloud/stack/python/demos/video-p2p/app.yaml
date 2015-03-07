@@ -1,0 +1,13 @@
+application: video-p2p
+version: 4
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+- url: /.*
+  script: video-p2p.app
+  secure: always
+
+inbound_services: 
+- channel_presence
