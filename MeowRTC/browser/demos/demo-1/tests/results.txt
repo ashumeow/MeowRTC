@@ -1,0 +1,67 @@
+1.789 (First view) --- Chrome
+0.916 (repeat view)
+First Byte Time (back-end processing): 100/100
+688 ms First Byte Time
+840 ms Target First Byte Time
+Use persistent connections 
+(keep alive): 100/100
+Use gzip compression for transferring compressable responses: 100/100
+48.4 KB total in compressible text, 
+target size = 48.4 KB - potential savings = 0.0 KB
+TESTING:-
+2015/03/08 06:00:48 - Test Created
+2015/03/08 06:00:51 - Starting test (initiated by tester WIN-7J7N1K000OJ-103.231.44.194)
+2015/03/08 06:00:51 - Run 1 assigned to WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:01:12 - Test Run Complete. Run: 1, Cached: 0, Done: , Tester: WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:01:23 - Test Run Complete. Run: 1, Cached: 1, Done: , Tester: WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:01:24 - Test Run Complete. Run: 1, Cached: 1, Done: 1, Tester: WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:01:24 - Test Complete
+2015/03/08 06:01:24 - Test post-processing complete
+
+
+
+2.943 (First view) --- Firefox
+2.466 (repeat view)
+First Byte Time (back-end processing): 100/100
+746 ms First Byte Time
+846 ms Target First Byte Time
+Use persistent connections 
+(keep alive): 100/100
+Use gzip compression for transferring compressable responses: 100/100
+47.1 KB total in compressible text, 
+target size = 47.1 KB - potential savings = 0.0 KB
+TESTING:-
+2015/03/08 06:07:58 - Test Created
+2015/03/08 06:08:01 - Starting test (initiated by tester WIN-7J7N1K000OJ-103.231.44.194)
+2015/03/08 06:08:01 - Run 1 assigned to WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:08:19 - Test Run Complete. Run: 1, Cached: 0, Done: , Tester: WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:08:33 - Test Run Complete. Run: 1, Cached: 1, Done: , Tester: WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:08:33 - Test Run Complete. Run: 1, Cached: 1, Done: 1, Tester: WIN-7J7N1K000OJ-103.231.44.194
+2015/03/08 06:08:33 - Test Complete
+2015/03/08 06:08:33 - Test post-processing complete
+
+
+CDN's Used:
+www.windowsgeekpro.in : Cloudflare
+cdn.jsdelivr.net : jsDelivr
+fonts.googleapis.com : Google
+fonts.gstatic.com : Google
+
+Chrome
+Test Machine DNS Server(s): 8.8.8.8,4.2.2.2
+
+First Byte Time 	
+Applicable Objects 	
+Time to First Byte for the page (back-end processing + redirects)
+What is checked 	
+The target time is the time needed for the DNS, socket and SSL negotiations + 100ms. A single letter grade will be deducted for every 100ms beyond the target.
+Keep-Alive 	
+Applicable Objects 	
+All objects that are from a domain that serves more than one object for the page (i.e. if only a single object is served from a given domain it will not be checked)
+What is checked 	
+The response header contains a "keep-alive" directive or the same socket was used for more than one object from the given host
+GZIP Text 	
+Applicable Objects 	
+All objects with a mime type of "text/*" or "*javascript*"
+What is checked 	
+Transfer-encoding is checked to see if it is gzip. If it is not then the file is compressed and the percentage of compression is the result (so a page that can save 30% of the size of it's text by compressing would yield a 70% test result)
