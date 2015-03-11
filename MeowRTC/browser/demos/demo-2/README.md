@@ -18,6 +18,7 @@ There are two ways of doing it... <br>
 The address will be displayed in <code>Tools Output</code>. Just copy it and paste it in Chrome browser. <br>
 After clicking enter, you will asked for the permission. Click allow. Duh! Here you go with the output. <br>
 Advantage:- You can share that link to any buddies and they can also view it after you allow them to access. <br>
+<code>Note:- Don't close your dart editor while sharing the link for someone to access to link. If the editor is closed, then that person will get a blank page or page not displayed. </code> <br>
 (OR) <br>
 2. You can also run from local host: <br>
 Before doing it.. <code>To start Chrome with remote connections enabled, use the --remote-debugging-port=<port> command-line flag. </code>
