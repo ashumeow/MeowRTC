@@ -1,0 +1,19 @@
+HOW-TO-DO??
+
+To get KB/s --
+Step 1:-
+We must first convert Mega Bytes to KiloBytes. 
+1MB = 1024 KB
+Example:- 25MB = 25600KB
+
+Step 2:- 
+Convert minutes into seconds.
+Time taken to transfer 25 MB = 2 minutes = 2X60 = 120 seconds
+
+Step 3:-
+Divide Kilo Bytes by Seconds to get the rate:
+25,600/120=213.34
+We'll round it too 213
+So now we have a rate of 213 KB/s.
+
+--- @ashumeow (^_^)
