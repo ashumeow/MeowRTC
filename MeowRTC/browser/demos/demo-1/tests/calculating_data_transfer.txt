@@ -1,5 +1,9 @@
 HOW-TO-DO??
 
+EXAMPLE:-
+
+(1) For transferring a normal which has no WebRTC enabled with high-speed internet connection (Let's say 4G)
+
 To get KB/s --
 Step 1:-
 We must first convert Mega Bytes to KiloBytes. 
@@ -16,4 +20,16 @@ Divide Kilo Bytes by Seconds to get the rate:
 We'll round it too 213
 So now we have a rate of 213 KB/s.
 
+(2) Using WebRTC
+
+[MeowRTC]
+meowrtc 
+2MB file= 2048KB
+time for upload = 0.25 sec
+time for data transfer = 1 sec (for all file size)
+Upload rate = 8192 KB/sec = 8MB/sec
+Data transfer rate = 2MB/sec
+
 --- @ashumeow (^_^)
+
+Note:- Detailled explanation and charts will be added in main documents.
