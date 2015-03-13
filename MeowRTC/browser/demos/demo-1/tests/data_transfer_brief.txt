@@ -23,8 +23,12 @@ Similarly with images… Images are branded! Compressing them might turn them ch
 Compressing audio/video might lead to losing such bits..
 It depends…
 What makes WebRTC different?
-Chrome/Firefox/Opera supports VP8 codec which is a video compression one… Currently, LIVE video streaming/conferencing purpose… But, how it escapes from compression defeats?
+Firefox supports VP8 codec which is a video compression one… Currently, LIVE video streaming/conferencing purpose… But, how it escapes from compression defeats?
 It follows error concealment algorithm where packet loss are being eliminated, where I studied about it in brief on "high performance browser networking" book.
 Out of curiosity, Compression is not used during file transfer since it makes use of some UDP power. No encoding/decoding. This is why the time is faster than the others that doesn't make use of this technology.
+Wrote an amateur self-study paper on WebRTC connectivity:-
+https://docs.google.com/document/d/1G5e_28NfOdsQ4TRyqeteMn8wc_gRzH_DdVyuXPyx7Xc/edit?usp=sharing
+
+Before deploying, the services (interface) are added for making it more interesting. (will be clearly explained in main docs)… Not very good in it… but, details will be added.
 
 """ Note:- Looks like enough details are given. For more additional details, it will be updated in main document. """
