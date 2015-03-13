@@ -1,0 +1,16 @@
+Comparisons
+
+Websites with WebRTC:-
+File Size = Convert to KB
+Upload time = (0.1 X 2) for 1MB, (0.2 X 2) for 2MB, etc..
+Data transmission time = webpage loading time
+Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
+
+Other sites without WebRTC:-
+File Size = Convert to KB
+Upload time = File size X 2 (in minutes)
+Data transmission time = webpage loading time
+Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
+
+Conclusion:-
+Websites (with WebRTC performance) > Websites (without WebRTC performance)
