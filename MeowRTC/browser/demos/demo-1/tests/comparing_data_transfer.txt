@@ -6,15 +6,17 @@
 
 Websites with WebRTC:-
 File Size = Convert to KB
+Upload time (2.75G) = (0.1 X 2.5) for 1MB, (0.2 X 2.5) for 2MB, etc..
+Upload time (2.5G) = (0.1 X 2.75) for 1MB, (0.2 X 2.75) for 2MB, etc..
 Upload time (2G) = (0.1 X 3) for 1MB, (0.2 X 3) for 2MB, etc..
-Upload time (2.5G) = (0.1 X 3.5) for 1MB, (0.2 X 3.5) for 2MB, etc..
-Upload time (2.75G) = (0.1 X 3.75) for 1MB, (0.2 X 3.75) for 2MB, etc..
 Data transmission time = webpage loading time
 Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
 Other sites without WebRTC:-
 File Size = Convert to KB
-Upload time = File size X 2 (in minutes)
+Upload time (2.75G) = File size X 2.5 (in minutes)
+Upload time (2.5G) = File size X 2.75 (in minutes)
+Upload time (2G) = File size X 3 (in minutes)
 Data transmission time = webpage loading time
 Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
@@ -29,7 +31,8 @@ Data transfer rate = File size (in KB) / data transmission time (in seconds) + u
 
 Other sites without WebRTC:-
 File Size = Convert to KB
-Upload time = File size X 1 (in minutes)
+Upload time (For mobile) = File size X 2 (in minutes)
+Upload time (For desktop/Laptop) = File size X 1 (in minutes)
 Data transmission time = webpage loading time
 Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
