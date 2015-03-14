@@ -6,35 +6,35 @@
 
 Websites with WebRTC:-
 File Size = Convert to KB
-Upload time (2.75G) = (0.1 X 2.5) for 1MB, (0.2 X 2.5) for 2MB, etc..
-Upload time (2.5G) = (0.1 X 2.75) for 1MB, (0.2 X 2.75) for 2MB, etc..
-Upload time (2G) = (0.1 X 3) for 1MB, (0.2 X 3) for 2MB, etc..
+Upload time (2.75G) = (0.1 sec X 2.5) for 1MB, (0.2 sec X 2.5) for 2MB, etc..
+Upload time (2.5G) = (0.1 sec X 2.75) for 1MB, (0.2 sec X 2.75) for 2MB, etc..
+Upload time (2G) = (0.1 sec X 3) for 1MB, (0.2 sec X 3) for 2MB, etc..
 Data transmission time = webpage loading time
-Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
+Data transfer rate (KB/s) = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
 Other sites without WebRTC:-
 File Size = Convert to KB
-Upload time (2.75G) = File size X 2.5 (in minutes)
-Upload time (2.5G) = File size X 2.75 (in minutes)
-Upload time (2G) = File size X 3 (in minutes)
+Upload time (2.75G) = File size X 2.5 (in minutes) (=> convert mins to secs)
+Upload time (2.5G) = File size X 2.75 (in minutes) (=> convert mins to secs)
+Upload time (2G) = File size X 3 (in minutes) (=> mins to secs)
 Data transmission time = webpage loading time
-Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
+Data transfer rate (KB/s) = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
 
 (3) FOR AVERAGE NETWORK CONNECTIVITY (Eg: 3G)
 
 Websites with WebRTC:-
 File Size = Convert to KB
-Upload time = (0.1 X 2) for 1MB, (0.2 X 2) for 2MB, etc..
+Upload time = (0.1 sec X 2) for 1MB, (0.2 sec X 2) for 2MB, etc..
 Data transmission time = webpage loading time
-Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
+Data transfer rate (KB/s) = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
 Other sites without WebRTC:-
 File Size = Convert to KB
-Upload time (For mobile) = File size X 2 (in minutes)
-Upload time (For desktop/Laptop) = File size X 1 (in minutes)
+Upload time (For mobile) = File size X 2 (in minutes) (=> convert mins to secs)
+Upload time (For desktop/Laptop) = File size X 1 (in minutes) (=> convert mins to secs)
 Data transmission time = webpage loading time
-Data transfer rate = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
+Data transfer rate (KB/s) = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
 (4) FOR HIGH SPEED CONNECTIVITY (Eg. 4G)
 
