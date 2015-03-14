@@ -6,29 +6,39 @@ Three things are included namely Web page loading time, File Size and Data Trans
 
 1. Webpage loading time ==> html + css + js + fonts (enabled Gzip from back-end)
 How about loading other data?
-That's where the challenge comes… Loading other data especially images takes more time. This can be defeated by responsive images that reduces the loading time.
-Audio and Video are done by some codecs… Yet, the faster streaming (like faster-loading of audio + video without buffering just like how responsive images loads faster) is kinda missing.
+That's where the challenge comes… Loading other data especially images takes more time. 
+This can be defeated by responsive images that reduces the loading time.
+Audio and Video are done by some codecs… 
+Yet, the faster streaming (like faster-loading of audio + video without buffering just like how responsive images loads faster) is kinda missing.
 Apart from online (not LIVE) streaming, WebRTC seems to be faster in LIVE streaming.
 
 2. File Size
 
 3. Data transmission through uploading files from client-side and saving them
-This is the most challenging part. This is where the WebRTC being stressed since the technology helps in faster uploading of files and transferring them.
+This is the most challenging part. 
+This is where the WebRTC being stressed since the technology helps in faster uploading of files and transferring them.
 Whereas, uploading or dropping without WebRTC appears to take some more time.
 Compression is not recommended in this area.
 Reducing image size/audio/video/whatever sizes will reduce quality.
-If we want to reduce the image size, then what is the purpose of buying high quality camera. Quality photos generally have rich pixels and thereby quality size.
-If we want to buy branded formal pant & shoes to go for an official function, then that pant and shoes will be expensive due to brand. To reduce the amount, Will we go and buy half-pant and half-shoes for going to such function?
+
+If we want to reduce the image size, then what is the purpose of buying high quality camera. 
+Quality photos generally have rich pixels and thereby quality size.
+If we want to buy branded formal pant & shoes to go for an official function, then that pant and shoes will be expensive due to brand. 
+To reduce the amount, Will we go and buy half-pant and half-shoes for going to such function?
 Similarly with images… Images are branded! Compressing them might turn them cheap.
 Compressing audio/video might lead to losing such bits..
 It depends…
+
 What makes WebRTC different?
-Chrome/Firefox/Opera supports VP8 codec which is a video compression one… Currently, LIVE video streaming/conferencing purpose… But, how it escapes from compression defeats?
+Chrome/Firefox/Opera supports VP8 codec which is a video compression one… Currently, LIVE video streaming/conferencing purpose… 
+But, how it escapes from compression defects?
 It follows error concealment algorithm where packet loss are being eliminated, where I studied about it in brief on "high performance browser networking" book.
-Out of curiosity, Compression is not used during file transfer since it makes use of some UDP power. No encoding/decoding. This is why the time is faster than the others that doesn't make use of this technology.
+Out of curiosity, Compression is not used during file transfer since it makes use of some UDP power. No encoding/decoding. 
+This is why the time is faster than the others that doesn't make use of this technology.
 Wrote an amateur self-study paper on WebRTC connectivity:-
 https://docs.google.com/document/d/1G5e_28NfOdsQ4TRyqeteMn8wc_gRzH_DdVyuXPyx7Xc/edit?usp=sharing
 
-Before deploying, the services (interface) are added for making it more interesting. (will be clearly explained in main docs)… Not very good in it… but, details will be added.
+Before deploying, the services (interface) are added for making it more interesting. (will be clearly explained in main docs)… 
+Not very good in it… but, details will be added.
 
 """ Note:- Looks like enough details are given. For more additional details, it will be updated in main document. """
