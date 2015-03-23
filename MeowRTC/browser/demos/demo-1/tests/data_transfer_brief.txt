@@ -12,7 +12,7 @@ Audio and Video are done by some codecs…
 Yet, the faster streaming (like faster-loading of audio + video without buffering just like how responsive images loads faster) is kinda missing.
 Apart from online (not LIVE) streaming, WebRTC seems to be faster in LIVE streaming.
 
-2. File Size
+2. File Size - The size of the file that will be uploaded and transmitted.
 
 3. Data transmission through uploading files from client-side and saving them
 This is the most challenging part. 
