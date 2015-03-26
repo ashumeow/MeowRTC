@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MeowDirectImageCapture</title>
+		<style type="text/css">
+			#container {
+				position: relative;
+			}
+
+			#overlay, #video {
+				width: 500px;
+				height: 375px;
+			}
+
+			#overlay {
+				position: absolute;
+				top: 0px;
+			}
+
+			.clear {
+				clear: both;
+			}
+
+		</style>
+		<script src="MeowCam.js"></script>
+		<script src="MeowScript.js"></script>
+	</head>
+<body>
+	<div id="container">
+	    <video id="video"></video>
+	    <div id="overlay">
+	    	<span>SAY CHEESEEE! (^_^)</span>
+	    </div>
+	</div>
+	<canvas id="canvas"></canvas> 
+	<hr />
+	<div class="clear">
+		<button id="takePicture">Take photo</button>
+		<button id="stop">Stop</button>
+		
+	</div>
+</body>
+</html> 
