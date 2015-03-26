@@ -32,13 +32,25 @@ Data transfer rate (KB/s) = File size (in KB) / data transmission time (in secon
 Other sites without WebRTC:-
 File Size = Convert to KB
 Upload time (For mobile) = File size X 2 (in minutes) (=> convert mins to secs)
-Upload time (For desktop/Laptop) = File size X 1 (in minutes) (=> convert mins to secs)
+Upload time (For desktop/Laptop) = File size X 1.5 (in minutes) (=> convert mins to secs)
 Data transmission time = webpage loading time
 Data transfer rate (KB/s) = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
 (4) FOR HIGH SPEED CONNECTIVITY (Eg. 4G)
 
 (5) FOR WIFI
+Websites with WebRTC:-
+File Size = Convert to KB
+Upload time = (0.075 sec X 2) for 1MB, (0.150 sec X 2) for 2MB, etc..
+Data transmission time = webpage loading time
+Data transfer rate (KB/s) = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
+
+Other sites without WebRTC:-
+File Size = Convert to KB
+Upload time (For mobile) = File size X 1.5 (in minutes) (=> convert mins to secs)
+Upload time (For desktop/Laptop) = File size X 1 (in minutes) (=> convert mins to secs)
+Data transmission time = webpage loading time
+Data transfer rate (KB/s) = File size (in KB) / data transmission time (in seconds) + uploading time (in seconds)
 
 (6) FOR ETHERNET
 
