@@ -9,7 +9,7 @@ var saveAs = saveAs
 	}
 	var
 		  doc = view.document
-		  // only get URL when necessary in case Blob.js hasn't overridden it yet
+		  // only get URL 
 		, get_URL = function() {
 			return view.URL || view.webkitURL || view;
 		}
