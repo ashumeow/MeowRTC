@@ -7,8 +7,7 @@ var saveAs = saveAs
 	    /MSIE [1-9]\./.test(navigator.userAgent)) {
 		return;
 	}
-	var
-		  doc = view.document
+	var doc = view.document
 		  // only get URL 
 		, get_URL = function() {
 			return view.URL || view.webkitURL || view;
