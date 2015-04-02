@@ -19,7 +19,6 @@ class Application(tornado.web.Application):
         )
         tornado.web.Application.__init__(self, handlers, **settings)
 
-# YAGNI...
 class BaseHandler(tornado.web.RequestHandler):
     pass
 
