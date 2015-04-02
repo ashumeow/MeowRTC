@@ -13,3 +13,5 @@ Top Python Frameworks:-
 (12) Tornado --- http://www.tornadoweb.org/en/stable/
 (13) web.py --- http://webpy.org/
 (14) Wheezy Web --- http://pythonhosted.org/wheezy.web/
+(15) Django --- https://www.djangoproject.com/
+(16) Twisted-Web --- http://twistedmatrix.com/documents/current/web/howto/using-twistedweb.html
