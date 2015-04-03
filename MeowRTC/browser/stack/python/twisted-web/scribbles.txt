@@ -1,0 +1,15 @@
+Looks like there are some issues that are faced while using "Twisted Web" in "Python 3.4.3"
+It seems to work in Python 2.7 (legacy one).
+But, Python 3.4.3 is more newer one with many latest Python web frameworks.
+[Updates]
+[1] https://twistedmatrix.com/trac/wiki/Plan/Python3
+[2] https://twistedmatrix.com/documents/current/core/howto/python3.html
+
+Interesting links:-
+[1] http://www.onlamp.com/pub/a/python/2004/01/15/twisted_intro.html
+[2] http://oubiwann.blogspot.in/2008/06/async-batching-with-twisted-walkthrough.html
+[3] http://twistedmatrix.com/trac/wiki/TwistedWeb
+[4] http://twistedmatrix.com/documents/current/web/howto/using-twistedweb.html
+[5] http://twistedmatrix.com/documents/current/web/howto/web-overview.html
+[6] http://twistedmatrix.com/documents/10.2.0/web/howto/using-twistedweb.html
+[7] http://twistedmatrix.com/documents/current/web/howto/web-in-60/index.html
