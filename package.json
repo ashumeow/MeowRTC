@@ -1,6 +1,6 @@
 {
   "name": "MeowRTC",
-  "version": "v0.0.6",
+  "version": "v0.0.7",
   "description": "MeowRTC is a peer-to-peer WebRTC stack that provides the advantages in performance and privacy.",
   "license": "MIT License",
   "repository": "ashumeow/MeowRTC",
