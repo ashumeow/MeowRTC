@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 from telapi import rest, inboundxml
 from flask import Flask, render_template, request, Response
 from uuid import uuid4
